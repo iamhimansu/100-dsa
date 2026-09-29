@@ -26,7 +26,6 @@ class Solution
                         if (!isset($out[$s])) {
                             $out[$s] = $ts;
                         }
-                        //echo "---0---\n";
                     }
                     $k++;
                     if ($k >= count($nums)) {
