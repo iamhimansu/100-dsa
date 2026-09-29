@@ -1,5 +1,6 @@
 <?php
 
+
 class Solution
 {
     /**
@@ -9,15 +10,25 @@ class Solution
     public function productExceptSelf($nums)
     {
         $prod = [];
-        for ($i = 0;$i < count($nums); $i++) {
-            $mul = 1;
-            for ($j = 0;$j < count($nums);$j++) {
-                if ($i != $j) {
-                    $mul *= $nums[$j];
-                }
+        $out = [];
+        $mul = 1;
+        foreach ($nums as $num) {
+            if ($num == 0) {
+                $prod[] = $num;
+            } else {
+                $mul *= $num;
+                $prod[] = $mul;
             }
-            $prod[] = $mul;
         }
-        return $prod;
+        foreach ($nums as $n => $num) {
+            $val = 1;
+
+            if (isset($nums[$n - 1])) {
+                $val = $nums[$n - 1];
+            }
+
+            $out[] = $val * $mul / $prod[$n];
+        }
+        return $out;
     }
 }
