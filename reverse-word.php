@@ -9,6 +9,7 @@ class Solution
         $wb = false;
         $words = [];
         // Input: s = "the sky is blue"
+        //Output: "blue is sky the"
         while ($marker >= 0) {
 
             if ($s[$marker] == ' ') {
